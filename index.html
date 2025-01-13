@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Análisis integral de Spotify (2013-2023), explorando popularidad, colaboraciones y el impacto del Covid-19 en la música">
+    <title>Transformaciones de la Música en la Era del Streaming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4caf50, #81c784);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: 700;
+            animation: fadeIn 2s ease;
+        }
+
+        header h2 {
+            font-size: 1.8rem;
+            margin: 0.5rem 0 0;
+            font-weight: 400;
+            opacity: 0.9;
+            animation: fadeIn 2.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        nav {
+            background-color: #1f2937;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .tabs {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .tabs li {
+            display: inline;
+        }
+
+        .tabs .tab {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .tabs .tab:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #161b22;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            animation: slideIn 1.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .content {
+            display: none;
+        }
+
+        .content iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .content.hidden {
+            display: none;
+        }
+
+        .content:not(.hidden) {
+            display: block;
+        }
+
+        footer {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header h2 {
+                font-size: 1.4rem;
+            }
+
+            .tabs .tab {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+
+            iframe {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Spotify_icon.svg" alt="Spotify Logo Blanco">
+        <h1>Transformaciones de la Música en la Era del Streaming</h1>
+        <h2>Un Análisis Integral de Spotify (2013-2023)</h2>
+    </header>
+    <nav>
+        <ul class="tabs">
+            <li><button class="tab" onclick="showSection('popularity')">Popularidad y Evolución</button></li>
+            <li><button class="tab" onclick="showSection('collaborations')">Colaboraciones, Diversidad y Características Técnicas</button></li>
+            <li><button class="tab" onclick="showSection('covid')">Impacto del Covid-19</button></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="popularity" class="content">
+            <h3>Popularidad y Evolución</h3>
+            <iframe src="Grafico_1.html" title="Gráfico 1"></iframe>
+            <iframe src="Grafico_A.html" title="Gráfico 2"></iframe>
+            <iframe src="Grafico_3.html" title="Gráfico 3"></iframe>
+            <iframe src="Grafico_4.html" title="Gráfico 4"></iframe>
+            <iframe src="Grafico_5.html" title="Gráfico 5"></iframe>
+            <iframe src="Grafico_6.html" title="Gráfico 6"></iframe>
+            <iframe src="Grafico_7.html" title="Gráfico 7"></iframe>
+            <iframe src="Grafico_8.html" title="Gráfico 8"></iframe>
+        </section>
+        <section id="collaborations" class="content hidden">
+            <h3>Colaboraciones, Diversidad y Características Técnicas</h3>
+            <iframe src="Grafico_9.html" title="Gráfico 9"></iframe>
+            <iframe src="Grafico_10.html" title="Gráfico 10"></iframe>
+        </section>
+        <section id="covid" class="content hidden">
+            <h3>Impacto del Covid-19</h3>
+            <iframe src="Grafico_11.html" title="Gráfico 11"></iframe>
+            <iframe src="Grafico_12.html" title="Gráfico 12"></iframe>
+            <iframe src="Grafico_13.html" title="Gráfico 13"></iframe>
+        </section>
+    </main>
+    <footer>
+        <p>Transformaciones de la Música en la Era del Streaming - Big Data &copy; 2025</p>
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
+
+
